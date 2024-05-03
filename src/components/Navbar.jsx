@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ const Navbar = () => {
                     </div>
                     <ul className='flex-col mt-10'>
                         <li className="p-2 hover:bg-gray-700">Home</li>
-                        <li className="p-2 hover:bg-gray-700">About</li>
+                        <Link href='/about' className="p-2 hover:bg-gray-700">About</Link>
                         <li className="p-2 hover:bg-gray-700">Services</li>
                         <li className="p-2 hover:bg-gray-700">Contact</li>
                     </ul>
