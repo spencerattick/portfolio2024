@@ -30,12 +30,15 @@ const Projects = ({ initialData }) => {
 
     return (
         <RootLayout>
-            <h1>PROJECTS</h1>
-            <ul>
-                {projects.map((project, index) => (
-                    <li key={index}>{project.title}</li>
-                ))}
-            </ul>
+            <div className="flex flex-col justify-center items-center h-screen">
+                <h1>PROJECTS</h1>
+                <ul>
+                    {projects.map((project, index) => (
+                        <li key={index}>{project.title}</li>
+                    ))}
+                </ul>
+            </div>
+         
         </RootLayout>
     )
 }
