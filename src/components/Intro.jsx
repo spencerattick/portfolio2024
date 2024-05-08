@@ -15,6 +15,7 @@ const Intro = () => {
                 <br />
                 <h2 className='bg-black text-teal-600 font-bold text-4xl border border-r-red-500 border-b-red-500 border-r-4 border-b-4 p-5 text-center border-transparent mt-5'>Software Engineer</h2> 
             </div>
+            
         </div> 
     );
 }
