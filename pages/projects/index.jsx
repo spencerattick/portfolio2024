@@ -3,6 +3,8 @@
 
 import { useEffect, useState } from "react";
 import Parser from 'rss-parser';
+import RootLayout from "../../app/layout";
+
 
 const parser = new Parser();
 
@@ -27,14 +29,14 @@ const Projects = ({ initialData }) => {
     }, [initialData]);
 
     return (
-        <div>
+        <RootLayout>
             <h1>PROJECTS</h1>
             <ul>
-                {/* {projects.map((project, index) => (
+                {projects.map((project, index) => (
                     <li key={index}>{project.title}</li>
-                ))} */}
+                ))}
             </ul>
-        </div>
+        </RootLayout>
     )
 }
 

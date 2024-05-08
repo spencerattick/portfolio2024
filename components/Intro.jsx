@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import mainPhoto from '../../public/mainPhoto.png';
-import cyclingPhoto from '../../public/cyclingPhoto.png';
+// import mainPhoto from '../public/mainPhoto.png';
+import cyclingPhoto from '../public/cyclingPhoto.png';
 
 const Intro = () => {
     return (
