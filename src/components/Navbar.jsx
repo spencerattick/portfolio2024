@@ -10,6 +10,10 @@ const Navbar = () => {
         setIsOpen(!isOpen);
     };
 
+    const handleLinkClick = () => {
+        setIsOpen(false);
+    }
+
     return (
         <div className="fixed top-0 left-0 z-50 p-4">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-10 h-10 text-red-500 cursor-pointer" onClick={toggleNav}>
@@ -22,12 +26,19 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                         </svg>
                     </div>
-                    <div className='flex-col mt-10'>
-                        <Link href='/' className="p-2 hover:bg-gray-700">Home</Link>
-                        <Link href='/about' className="p-2 hover:bg-gray-700">About</Link>
-                        <li className="p-2 hover:bg-gray-700">Services</li>
-                        <li className="p-2 hover:bg-gray-700">Contact</li>
-                    </div>
+                    <ul className='mt-10'>
+                        <li className="p-2 hover:bg-gray-700">
+                            <Link href='/' className="hover:bg-gray-700" onClick={handleLinkClick}>Home</Link>
+                        </li>
+                        <li className="p-2 hover:bg-gray-700" onClick={handleLinkClick}>
+                            <Link href='/about' className="hover:bg-gray-700">About</Link>
+                        </li>
+                        <li className="p-2 hover:bg-gray-700">
+                            <Link href='/projects' className="hover:bg-gray-700" onClick={handleLinkClick}>Projects</Link>
+                        </li>
+                    </ul>
+
+
                      <div className='flex space-x-2 mt-7'>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className='w-6 h-6'>
                             <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
