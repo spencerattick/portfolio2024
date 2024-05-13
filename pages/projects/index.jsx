@@ -56,19 +56,18 @@ const Projects = ({ initialData }) => {
     return (
         <RootLayout>
             <div className="flex flex-col justify-center items-center h-screen">
-                <h1 className="text-teal-600 font-bold text-4xl my-10">PROJECTS</h1>
+                <h1 className="text-teal-600 font-bold text-4xl my-10 mt-12">PROJECTS</h1>
                 <ul className="flex flex-wrap justify-around">
                     {projects.map((project, index) => {
-                        console.log('DATE ', new Date(project.isoDate).toDateString().split(' ').slice(1).join(' '))
                         const cleanTitle = removeProjectFromTitle(project.title);
                         const imgUrl = getImgURL(project['content:encoded']);
                         return (
-                            <li key={index} className="text-teal-600 text-xl m-10 mx-15 shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-300">
+                            <li key={index} className="text-teal-600 text-xl m-10 mx-12 shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-80 w-80 border-0 border-b-red-500 border-b-8 hover:bg-black hover:w-96">
                                 <a href={project.guid} target="_blank" className="cursor-pointer">
-                                    <div className="border-0 border-b-red-500 border-b-8 h-80 w-60 hover:bg-black text-center flex flex-col justify-center items-center">
-                                        <p className="mb-4 ">{cleanTitle}</p>
+                                    <div className="text-center flex flex-col justify-center items-center">
+                                        <p className="mb-4">{cleanTitle}</p>
                                         <p className="text-sm text-black mb-4">{new Date(project.isoDate).toDateString().split(' ').slice(1).join(' ')}</p>
-                                        <Image src={imgUrl} width={210} height={110} alt={cleanTitle}/>
+                                        <Image src={imgUrl} width={230} height={150} alt={cleanTitle}/>
                                     </div>   
                                 </a>
                                 
