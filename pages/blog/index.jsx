@@ -55,22 +55,22 @@ const Blog = ({ initialData }) => {
 
     return (
         <RootLayout>
-            <div className="flex flex-col justify-center items-center h-screen bg-teal-600">
+            <div className="flex flex-col justify-center items-center h-full bg-teal-600 py-10">
                 <h1 className="text-black font-bold text-4xl my-10 mt-12">BLOG POSTS</h1>
                 <ul className="flex flex-wrap justify-around">
                     {projects.map((project, index) => {
                         const cleanTitle = removeProjectFromTitle(project.title);
                         const imgUrl = getImgURL(project['content:encoded']);
                         return (
-                            <li key={index} className="text-black bg-white text-xl m-10 mx-12 shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-80 w-80 border-0 hover:bg-black hover:w-96">
+                            <li key={index} className="text-black bg-white text-xl m-10 mx-12 rounded-lg shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-80 w-80 border-0 hover:bg-black hover:w-96">
                                 <a href={project.guid} target="_blank" className="cursor-pointer">
                                     <div className="text-center flex flex-col justify-center items-center">
-                                        <div className="relative w-40 h-40 my-4">
+                                        <div className="relative w-full h-40">
                                             <div className="absolute inset-0">
-                                                <Image src={imgUrl} layout="fill" objectFit="cover" alt={cleanTitle} />
+                                                <Image src={imgUrl} layout="fill" objectFit="cover" alt={cleanTitle} className="rounded-t-lg" />
                                             </div>
                                         </div>
-                                        <p className="mb-4">{cleanTitle}</p>
+                                        <p className="my-4">{cleanTitle}</p>
                                         <p className="text-sm text-black mb-4">{new Date(project.isoDate).toDateString().split(' ').slice(1).join(' ')}</p>
                                     </div>   
                                 </a>

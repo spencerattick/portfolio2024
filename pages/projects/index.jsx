@@ -55,8 +55,8 @@ const Projects = ({ initialData }) => {
 
     return (
         <RootLayout>
-            <div className="flex flex-col justify-center items-center h-screen">
-                <h1 className="text-teal-600 font-bold text-4xl my-10 mt-12">PROJECTS</h1>
+            <div className="flex flex-col justify-center items-center h-full">
+                <h1 className="text-teal-600 font-bold text-4xl my-10">PROJECTS</h1>
                 <ul className="flex flex-wrap justify-around">
                     {projects.map((project, index) => {
                         const cleanTitle = removeProjectFromTitle(project.title);
