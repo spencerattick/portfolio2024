@@ -39,6 +39,9 @@ const Navbar = () => {
                         <li className="p-2 hover:bg-gray-700">
                             <Link href='/techStack' className="hover:bg-gray-700" onClick={handleLinkClick}>Tech Stack</Link>
                         </li>
+                        <li className="p-2 hover:bg-gray-700">
+                            <Link href='/blog' className="hover:bg-gray-700" onClick={handleLinkClick}>Blog</Link>
+                        </li>
                     </ul>
 
 
