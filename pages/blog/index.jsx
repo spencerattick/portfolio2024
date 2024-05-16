@@ -70,7 +70,7 @@ const Blog = ({ initialData }) => {
                                                 <Image src={imgUrl} layout="fill" objectFit="cover" alt={cleanTitle} className="rounded-t-lg" />
                                             </div>
                                         </div>
-                                        <p className="my-4">{cleanTitle}</p>
+                                        <p className="my-4 font-semibold">{cleanTitle}</p>
                                         <p className="text-sm text-black mb-4">{new Date(project.isoDate).toDateString().split(' ').slice(1).join(' ')}</p>
                                     </div>   
                                 </a>

@@ -65,9 +65,13 @@ const Projects = ({ initialData }) => {
                             <li key={index} className="text-teal-600 text-xl m-10 mx-12 shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-80 w-80 border-0 border-b-red-500 border-b-8 hover:bg-black hover:w-96">
                                 <a href={project.guid} target="_blank" className="cursor-pointer">
                                     <div className="text-center flex flex-col justify-center items-center">
-                                        <p className="mb-4">{cleanTitle}</p>
+                                        <p className="my-4 font-semibold">{cleanTitle}</p>
                                         <p className="text-sm text-black mb-4">{new Date(project.isoDate).toDateString().split(' ').slice(1).join(' ')}</p>
-                                        <Image src={imgUrl} width={230} height={150} alt={cleanTitle}/>
+                                        <div className="relative w-full h-40">
+                                            <div className="inset-0">
+                                                <Image src={imgUrl} layout="fill" objectFit="cover" alt={cleanTitle} className="" />
+                                            </div>
+                                        </div>
                                     </div>   
                                 </a>
                                 
