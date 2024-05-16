@@ -14,7 +14,7 @@ export async function getServerSideProps() {
         const response = await fetch('https://medium.com/feed/@spencer.attick');
         const feedXML = await response.text();
         const feed = await parser.parseString(feedXML);
-        const projectsFeed = feed.items.filter((post) => post.title.includes('Project'));
+        const projectsFeed = feed.items.filter((post) => !post.title.includes('Project'));
         return { props: { initialData: projectsFeed } };
     } catch (error) {
         console.error(error);
@@ -62,12 +62,16 @@ const Blog = ({ initialData }) => {
                         const cleanTitle = removeProjectFromTitle(project.title);
                         const imgUrl = getImgURL(project['content:encoded']);
                         return (
-                            <li key={index} className="text-black bg-white text-xl m-10 mx-12 shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-80 w-80 border-0 border-b-red-500 border-b-8 hover:bg-black hover:w-96">
+                            <li key={index} className="text-black bg-white text-xl m-10 mx-12 shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-80 w-80 border-0 hover:bg-black hover:w-96">
                                 <a href={project.guid} target="_blank" className="cursor-pointer">
                                     <div className="text-center flex flex-col justify-center items-center">
+                                        <div className="relative w-40 h-40 my-4">
+                                            <div className="absolute inset-0">
+                                                <Image src={imgUrl} layout="fill" objectFit="cover" alt={cleanTitle} />
+                                            </div>
+                                        </div>
                                         <p className="mb-4">{cleanTitle}</p>
                                         <p className="text-sm text-black mb-4">{new Date(project.isoDate).toDateString().split(' ').slice(1).join(' ')}</p>
-                                        <Image src={imgUrl} width={230} height={150} alt={cleanTitle}/>
                                     </div>   
                                 </a>
                                 
