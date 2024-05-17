@@ -67,8 +67,8 @@ const Projects = ({ initialData }) => {
                                     <div className="text-center flex flex-col justify-center items-center">
                                         <p className="my-4 font-semibold">{cleanTitle}</p>
                                         <p className="text-sm text-black mb-4">{new Date(project.isoDate).toDateString().split(' ').slice(1).join(' ')}</p>
-                                        <div className="relative w-full h-40">
-                                            <div className="inset-0">
+                                        <div className="relative w-full h-44">
+                                            <div className="inset-1">
                                                 <Image src={imgUrl} layout="fill" objectFit="cover" alt={cleanTitle} className="" />
                                             </div>
                                         </div>
