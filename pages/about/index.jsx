@@ -47,15 +47,15 @@ const About = ({ initialData }) => {
       <RootLayout>
         <div className="flex flex-col justify-center items-center border border-red-400">
           <h2 className="text-teal-600 font-bold text-4xl my-10">Currently Reading</h2>
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center items-center">
             {goodReadsFeed.items ? (
                 goodReadsFeed.items.map((book, key) => {
                     const bookImg = getBookImg(book);
                     const bookTitle = getBookTitle(book.title);
                     console.log(bookImg)
                     return (
-                      <div key={key} className="p-10">
-                        <p>{bookTitle}</p>
+                      <div key={key} className="p-10 flex flex-col items-center text-center font-semibold">
+                        <p className="border border-gree-400 h-14 w-64">{bookTitle}</p>
                         <div className="">
                           <Image src={bookImg} width={200} height={200} alt={bookTitle} className=""></Image>
                         </div>
