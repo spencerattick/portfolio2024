@@ -36,6 +36,16 @@ const getBookTitle = title => {
   return title.match(regex)[0];
 }
 
+const getBookLink = content => {
+  console.log('CONTENT ', content)
+  const splitContent = content.split('<');
+  const splitAgain = splitContent[1].split('"');
+  const linkText = splitAgain[1];
+  const link = `https://www.goodreads.com${linkText}`;
+
+  return link;
+}
+
 const About = ({ initialData }) => {
     const [goodReadsFeed, setGoodReadsFeed] = useState(initialData);
 
@@ -45,21 +55,24 @@ const About = ({ initialData }) => {
 
     return (
       <RootLayout>
-        <div className="flex flex-col justify-center items-center border border-red-400">
+        <div className="flex flex-col justify-center items-center">
           <h2 className="text-teal-600 font-bold text-4xl my-10">Currently Reading</h2>
           <div className="flex flex-wrap justify-center items-center">
             {goodReadsFeed.items ? (
                 goodReadsFeed.items.map((book, key) => {
                     const bookImg = getBookImg(book);
                     const bookTitle = getBookTitle(book.title);
-                    console.log(bookImg)
+                    const bookLink = getBookLink(book.content);
                     return (
-                      <div key={key} className="p-10 flex flex-col items-center text-center font-semibold">
-                        <p className="border border-gree-400 h-14 w-64">{bookTitle}</p>
-                        <div className="">
-                          <Image src={bookImg} width={200} height={200} alt={bookTitle} className=""></Image>
+                      <a href={bookLink} target="_blank">
+                        <div key={key} className="p-10 flex flex-col items-center text-center font-semibold">
+                            <p className="bg-black text-teal-600 h-24 w-64 z-10 flex justify-center items-center text-md">{bookTitle}</p>
+                            <div className="">
+                              <Image src={bookImg} width={200} height={200} alt={bookTitle} className=""></Image>
+                            </div>
                         </div>
-                      </div>
+                      </a>
+
                     );
                 })
             ) : (
