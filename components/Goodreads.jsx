@@ -21,7 +21,6 @@ const getBookTitle = title => {
 }
 
 const getBookLink = content => {
-  console.log('CONTENT ', content)
   const splitContent = content.split('<');
   const splitAgain = splitContent[1].split('"');
   const linkText = splitAgain[1];
@@ -63,7 +62,7 @@ const Goodreads = ({ initialData }) => {
                   It looks like something went wrong. You can see what I'm reading here: <a href="https://www.goodreads.com/user/show/104822881-spencer-attick">Goodreads Feed</a>.
                 </div>
             )}
-          </div>
+          </div> 
         </div>
     );
 }
