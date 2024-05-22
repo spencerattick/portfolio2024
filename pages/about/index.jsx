@@ -2,7 +2,11 @@ import Parser from 'rss-parser';
 import RootLayout from "../../app/layout";
 import Goodreads from '../../components/Goodreads';
 import Strava from '../../components/Strava';
+import fs from 'fs';
+import dotenv from 'dotenv';
 
+
+require('dotenv').config();
 const parser = new Parser();
 
 //STRAVA CODE
@@ -115,7 +119,7 @@ const executeStravaLogic = async () => {
   } 
   // //make request to Strava activities endpoint
   const stravaActivityData = await getStravaActivityData();
-  console.log(stravaActivityData[0].name);
+  console.log(stravaActivityData);
 };
 
 const getGoodreadsData = async () => {
@@ -134,7 +138,7 @@ const getGoodreadsData = async () => {
 export async function getServerSideProps() {
   const [goodReadsData, stravaData] = await Promise.all([
     getGoodreadsData(), 
-    // executeStravaLogic()
+    executeStravaLogic()
   ]);
   return { props: { goodReadsData } };
 }
