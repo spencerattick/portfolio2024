@@ -11,7 +11,7 @@ const Intro = () => {
 
             <div className='max-w-md relative z-10 mt-[-250px] flex flex-wrap justify-center'>
                 <h1 className='bg-black text-teal-600 font-bold text-7xl border border-r-red-500 border-b-red-500 border-r-4 border-b-4 p-5 text-center border-transparent text-nowrap'>SPENCER ATTICK</h1>
-                <h3 className='bg-black text-teal-600 font-bold text-4xl border border-r-red-500 border-b-red-500 border-r-4 border-b-4 px-0 py-5 text-center mx-32 mt-[-20px] border-transparent'>he/him</h3> 
+                <h3 className='bg-black text-teal-600 font-bold text-4xl border border-r-red-500 border-b-red-500 border-r-4 border-b-4 px-0 py-5 text-center mx-32 mt-[-20px] border-transparent'>he/they</h3> 
                 <br />
                 <h2 className='bg-black text-teal-600 font-bold text-4xl border border-r-red-500 border-b-red-500 border-r-4 border-b-4 p-5 text-center border-transparent mt-5'>Software Engineer</h2> 
             </div>
