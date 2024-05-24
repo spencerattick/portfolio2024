@@ -44,7 +44,7 @@ const Goodreads = ({ initialData }) => {
 
     return (
         <div className="flex flex-col justify-center items-center">
-          <h2 className="font-bold text-3xl my-10">Currently Reading</h2>
+          <h2 className="font-bold text-3xl mt-24">Bookshelf</h2>
           <div className="flex flex-wrap justify-center items-center">
             {goodReadsFeed.items ? (
                 goodReadsFeed.items.map((book, key) => {
@@ -57,7 +57,7 @@ const Goodreads = ({ initialData }) => {
                             <div className="w-48 h-72 overflow-hidden flex justify-center items-center">
                                 <Image src={bookImg} width={200} height={300} alt={bookTitle} className="object-cover transform transition-transform group-hover:-translate-y-4"></Image>
                             </div>
-                            <p className="mt-2 transition-opacity opacity-0 group-hover:opacity-100 border-b-red-500 border-r-red-500 border-t-transparent border-l-transparent border p-1">{`Completed on ${formattedTimestamp}`}</p>
+                            <p className="mt-2 transition-opacity opacity-0 group-hover:opacity-100 border-b-red-500 border-r-red-500 border-t-transparent border-l-transparent border border-b-2 border-r-2 p-1 text-sm">{`Completed on ${formattedTimestamp}`}</p>
                         </a>
 
                     );
