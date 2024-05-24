@@ -29,6 +29,12 @@ const getBookLink = content => {
   return link;
 }
 
+const reformatTimestamp = timestamp => {
+    const splitTimestamp = timestamp.split(' ');
+    return `${splitTimestamp[2]} ${splitTimestamp[1]}, ${splitTimestamp[3]}`;
+
+}
+
 const Goodreads = ({ initialData }) => {
     const [goodReadsFeed, setGoodReadsFeed] = useState(initialData);
 
@@ -42,19 +48,17 @@ const Goodreads = ({ initialData }) => {
           <div className="flex flex-wrap justify-center items-center">
             {goodReadsFeed.items ? (
                 goodReadsFeed.items.map((book, key) => {
+                    const formattedTimestamp = reformatTimestamp(book.pubDate);
                     const bookImg = getBookImg(book);
                     const bookTitle = getBookTitle(book.title);
                     const bookLink = getBookLink(book.content);
                     return (
-                      <a href={bookLink} target="_blank">
-                        <div key={key} className="p-10 flex flex-col items-center text-center font-semibold">
-                            {/* <p className="bg-black text-teal-600 h-24 w-64 z-10 flex justify-center items-center text-md">      {bookTitle}
-                            </p> */}
+                        <a href={bookLink} target="_blank" key={key} className="p-10 flex flex-col items-center text-center font-semibold group">
                             <div className="w-48 h-72 overflow-hidden flex justify-center items-center">
-                              <Image src={bookImg} width={200} height={300} alt={bookTitle} className="object-cover"></Image>
+                                <Image src={bookImg} width={200} height={300} alt={bookTitle} className="object-cover transform transition-transform group-hover:-translate-y-4"></Image>
                             </div>
-                        </div>
-                      </a>
+                            <p className="mt-2 transition-opacity opacity-0 group-hover:opacity-100 border-b-red-500 border-r-red-500 border-t-transparent border-l-transparent border p-1">{`Completed on ${formattedTimestamp}`}</p>
+                        </a>
 
                     );
                 })

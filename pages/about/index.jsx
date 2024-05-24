@@ -6,6 +6,9 @@ import Strava from '../../components/Strava';
 import fs from 'fs';
 import dotenv from 'dotenv';
 
+//ADD GITHUB COMMIT GRAPH??
+// https://medium.com/@yuichkun/how-to-retrieve-contribution-graph-data-from-the-github-api-dc3a151b4af
+
 
 require('dotenv').config();
 const parser = new Parser();
