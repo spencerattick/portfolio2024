@@ -1,6 +1,7 @@
 import Parser from 'rss-parser';
 import RootLayout from "../../app/layout";
 import Goodreads from '../../components/Goodreads';
+import AboutMe from '../../components/AboutMe';
 import Strava from '../../components/Strava';
 import fs from 'fs';
 import dotenv from 'dotenv';
@@ -169,10 +170,14 @@ export async function getServerSideProps() {
 const About = ({ goodReadsData, stravaData }) => {
     return (
       <RootLayout>
-        <div className="flex">
-          <Goodreads initialData={goodReadsData}/>
-          <Strava initialData={stravaData}/>
+        <div>
+          <AboutMe />
+          <div className="flex">
+            <Goodreads initialData={goodReadsData}/>
+            {/* <Strava initialData={stravaData}/> */}
+          </div>
         </div>
+
       </RootLayout>
     );
 }
