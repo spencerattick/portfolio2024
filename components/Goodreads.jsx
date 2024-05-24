@@ -38,7 +38,7 @@ const Goodreads = ({ initialData }) => {
 
     return (
         <div className="flex flex-col justify-center items-center">
-          <h2 className="text-teal-600 font-bold text-4xl my-10">Currently Reading</h2>
+          <h2 className="font-bold text-3xl my-10">Currently Reading</h2>
           <div className="flex flex-wrap justify-center items-center">
             {goodReadsFeed.items ? (
                 goodReadsFeed.items.map((book, key) => {
@@ -48,9 +48,10 @@ const Goodreads = ({ initialData }) => {
                     return (
                       <a href={bookLink} target="_blank">
                         <div key={key} className="p-10 flex flex-col items-center text-center font-semibold">
-                            <p className="bg-black text-teal-600 h-24 w-64 z-10 flex justify-center items-center text-md">{bookTitle}</p>
-                            <div className="">
-                              <Image src={bookImg} width={200} height={200} alt={bookTitle} className=""></Image>
+                            {/* <p className="bg-black text-teal-600 h-24 w-64 z-10 flex justify-center items-center text-md">      {bookTitle}
+                            </p> */}
+                            <div className="w-48 h-72 overflow-hidden flex justify-center items-center">
+                              <Image src={bookImg} width={200} height={300} alt={bookTitle} className="object-cover"></Image>
                             </div>
                         </div>
                       </a>

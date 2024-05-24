@@ -11,7 +11,7 @@ const AboutMe = () => {
             </p>
           </div>
           <div>
-            <Image src={aboutMe} width={800} height={800} alt="Spencer hiking in the mountains" className="rounded-2xl rotate-3" />
+            <Image src={aboutMe} width={800} height={800} alt="Spencer hiking in the mountains" className="rounded-3xl rotate-6" />
           </div>
         </div>
    
