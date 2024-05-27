@@ -1,6 +1,6 @@
 require('dotenv').config();
+const fetch = require('node-fetch');
 
-const fetch = require('node-fetch');  // Ensure you have node-fetch installed
 const TOKEN = process.env.githubToken;
 
 const query = `
@@ -48,12 +48,15 @@ async function retrieveContributionData(userName) {
   return parsed;
 }
 
-(async () => {
-  try {
-    const commitData = await retrieveContributionData('spencerattick');
-    const commitsThisYear = commitData.data.user.contributionsCollection.contributionCalendar.totalContributions;
-    console.log(commitsThisYear)
-  } catch (error) {
+const commitsThisYearPromise = retrieveContributionData('spencerattick')
+  .then(commitData => {
+    return commitData.data.user.contributionsCollection.contributionCalendar.totalContributions;
+  })
+  .catch(error => {
     console.error('Error:', error);
-  }
-})();
+    throw error;
+  });
+
+module.exports = {
+  commitsThisYearPromise
+};

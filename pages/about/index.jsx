@@ -3,8 +3,21 @@ import RootLayout from "../../app/layout";
 import Goodreads from '../../components/Goodreads';
 import AboutMe from '../../components/AboutMe';
 import Strava from '../../components/Strava';
-import fs from 'fs';
+// import fs from 'fs';
 import dotenv from 'dotenv';
+dotenv.config();
+
+import { commitsThisYearPromise } from "../../services/githubAPI.js";
+
+const getGithubCommitData = async () => {
+  try {
+    const commitsThisYear = await commitsThisYearPromise;
+    return commitsThisYear;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
 
 //ADD GITHUB COMMIT GRAPH??
 // https://medium.com/@yuichkun/how-to-retrieve-contribution-graph-data-from-the-github-api-dc3a151b4af
@@ -140,11 +153,12 @@ const getGoodreadsData = async () => {
 
 
 export async function getServerSideProps() {
-  const [goodReadsData, stravaData] = await Promise.all([
+  const [goodReadsData, githubCommitData /*stravaData */] = await Promise.all([
     getGoodreadsData(), 
-    executeStravaLogic()
+    getGithubCommitData()
+    // executeStravaLogic()
   ]);
-  return { props: { goodReadsData } };
+  return { props: { goodReadsData, githubCommitData } };
 }
 
 // export async function getServerSideProps() {
@@ -170,11 +184,11 @@ export async function getServerSideProps() {
 //     }
 // }
 
-const About = ({ goodReadsData, stravaData }) => {
+const About = ({ goodReadsData, stravaData, githubCommitData }) => {
     return (
       <RootLayout>
         <div>
-          <AboutMe />
+          <AboutMe githubCommitData={githubCommitData}/>
           {/* //ADD GITHUB DATA */}
           <div className="flex">
             <Goodreads initialData={goodReadsData}/>
