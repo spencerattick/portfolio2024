@@ -1,6 +1,9 @@
 require('dotenv').config();
 const fetch = require('node-fetch');
 
+//ADD GITHUB COMMIT GRAPH??
+// https://medium.com/@yuichkun/how-to-retrieve-contribution-graph-data-from-the-github-api-dc3a151b4af
+
 const TOKEN = process.env.githubToken;
 
 const query = `
