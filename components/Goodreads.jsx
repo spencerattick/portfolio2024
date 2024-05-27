@@ -44,7 +44,7 @@ const Goodreads = ({ initialData }) => {
 
     return (
         <div className="flex flex-col justify-center items-center">
-          <h2 className="font-bold text-3xl mt-32">Bookshelf</h2>
+          <h2 className="font-bold text-3xl">Bookshelf</h2>
           <div className="flex flex-wrap justify-center items-center">
             {goodReadsFeed.items ? (
                 goodReadsFeed.items.map((book, key) => {
