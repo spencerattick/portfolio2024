@@ -175,6 +175,7 @@ const About = ({ goodReadsData, stravaData }) => {
       <RootLayout>
         <div>
           <AboutMe />
+          {/* //ADD GITHUB DATA */}
           <div className="flex">
             <Goodreads initialData={goodReadsData}/>
             {/* <Strava initialData={stravaData}/> */}
