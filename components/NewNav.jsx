@@ -35,7 +35,6 @@ const NewNav = () => {
                         <Link href='/blog' className="hover:bg-gray-600" onClick={handleLinkClick}>Blog</Link>
                         <Link href='/contact' className="hover:bg-gray-600" onClick={handleLinkClick}>Contact</Link>
                     </div>
-                    
                 </div>
             }
             
