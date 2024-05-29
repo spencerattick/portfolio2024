@@ -1,15 +1,18 @@
 const Footer = () => {
     return (
-        <div className='flex justify-between bg-black p-5'>
-            <div className="relative group">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className='w-8 h-8 cursor-pointer text-white hover:text-red-500 hover:h-10 hover:w-10 ease-in duration-200'>
-                    <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-                    <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-                </svg>
-                <div className="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded py-1 px-2">
-                    Email
+        <div className='flex justify-between bg-black p-4'>
+            <a href="mailto:spencer.attick@gmail">
+                <div className="relative group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className='w-8 h-8 cursor-pointer text-white hover:text-red-500 hover:h-10 hover:w-10 ease-in duration-200'>
+                        <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                        <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+                    </svg>
+                    <div className="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded py-1 px-2">
+                        Email
+                    </div>
                 </div>
-            </div>
+            </a>
+            <a href="https://docs.google.com/document/d/1f-wE2iTc3nHfJZIawLdELfOoWeFj8N3vsfQuO0AnQTE/edit?usp=sharing" target="_blank">
             <div className="relative group">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className='fill-current w-8 h-8 cursor-pointer text-white hover:text-red-500 hover:h-10 hover:w-10 ease-in duration-200'>
                     <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H288V368c0-26.5 21.5-48 48-48H448V96c0-35.3-28.7-64-64-64H64zM448 352H402.7 336c-8.8 0-16 7.2-16 16v66.7V480l32-32 64-64 32-32z"/>
@@ -18,6 +21,7 @@ const Footer = () => {
                     Resume
                 </div>
             </div>
+            </a>
             <div className="relative group">
                 <a href="https://github.com/spencerattick">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" className='fill-current w-8 h-8 cursor-pointer text-white hover:text-red-500 hover:h-10 hover:w-10 ease-in duration-200'>
