@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='flex justify-between bg-black p-4'>
             {contact.map((contactObj, index) => {
                 return (
-                    <a href={contactObj.link} target="_blank">
+                    <a href={contactObj.link} target="_blank" key={index}>
                     <div className="relative group">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className='w-8 h-8 cursor-pointer text-white hover:text-red-500 hover:h-10 hover:w-10 ease-in duration-200'fill="currentColor" > 
                             <path d={contactObj.icon}/>
