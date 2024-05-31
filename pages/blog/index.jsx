@@ -1,4 +1,4 @@
-// pages/projects.js
+// https://dribbble.com/tags/card-ui
 'use client';
 
 import { useEffect, useState } from "react";
