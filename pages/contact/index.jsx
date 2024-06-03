@@ -6,11 +6,18 @@ import contactPhoto from "../../public/contact.png";
 export default function Contact() {
   return (
     <RootLayout>
-      <div className="flex flex-col text-center h-screen">
-        <h1 className="text-black font-bold text-4xl my-10 mt-12">CONTACT ME</h1>
-        <div className="flex justify-center space-x-32">
-          <Image src={contactPhoto} width={300} height={300} alt="Spencer hiking in Colorado"></Image>
-          <div className="flex flex-col p-4 items-center">
+      <div className="flex flex-col text-center h-screen m-20">
+        {/* <h1 className="text-black font-bold text-4xl my-12">CONTACT ME</h1> */}
+        <div className="mb-8 flex-col justify-center items-center">
+            <h1 className="font-bold text-4xl">
+              I'd love to hear from you!
+            </h1>
+            <p className="text-xl">Feel free to click around and take a look at what I've been up to.</p>
+        </div>
+
+        <div className="flex justify-center items-center space-x-32">
+          <Image src={contactPhoto} width={400} height={400} alt="Spencer hiking in Colorado" className=""/>
+          <div className="flex flex-col p-4 items-start">
             {contact.map((contactObj, index) => (
               <a
                 href={contactObj.link}
@@ -33,7 +40,7 @@ export default function Contact() {
                 </div>
               </a>
             ))}
-        </div>
+          </div>
         </div>
       </div>
     </RootLayout>
