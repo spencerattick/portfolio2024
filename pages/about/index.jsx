@@ -33,7 +33,7 @@ const About = ({ goodReadsData, stravaData, githubCommitData }) => {
           <AboutMe githubCommitData={githubCommitData}/>
           {/* //ADD GITHUB DATA */}
           <div className="flex">
-            <Goodreads initialData={goodReadsData}/>
+            <Goodreads className="mt-7" initialData={goodReadsData}/>
             {/* <Strava initialData={stravaData}/> */}
           </div>
         </div>

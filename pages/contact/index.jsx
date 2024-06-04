@@ -7,7 +7,6 @@ export default function Contact() {
   return (
     <RootLayout>
       <div className="flex flex-col text-center h-screen m-20">
-        {/* <h1 className="text-black font-bold text-4xl my-12">CONTACT ME</h1> */}
         <div className="mb-8 flex-col justify-center items-center">
             <h1 className="font-bold text-4xl">
               I'd love to hear from you!
@@ -16,8 +15,8 @@ export default function Contact() {
         </div>
 
         <div className="flex justify-center items-center space-x-32">
-          <Image src={contactPhoto} width={400} height={400} alt="Spencer hiking in Colorado" className=""/>
-          <div className="flex flex-col p-4 items-start">
+          <Image src={contactPhoto} width={400} height={400} alt="Spencer hiking in Colorado"/>
+          <div className="flex flex-col p-8 items-start border-2 border-red-500">
             {contact.map((contactObj, index) => (
               <a
                 href={contactObj.link}
