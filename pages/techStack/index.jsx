@@ -23,7 +23,7 @@ export default function TechStack() {
             <div key={index} className="p-4 flex items-center justify-center w-full">
               <div className="flex flex-col items-center justify-center text-center px-8 w-28">
                 <div className="flex justify-center items-center w-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#ef4444" className="h-9 w-9">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox={tech.viewBox || "0 0 358 512"} fill="#ef4444" className="max-h-9 max-w-9">
                     <path d={tech.icon}/>
                   </svg>
                 </div>
