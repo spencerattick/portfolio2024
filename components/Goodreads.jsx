@@ -46,8 +46,8 @@ const Goodreads = ({ initialData }) => {
         <div className="flex flex-col justify-center items-center">
           <h2 className="font-bold text-3xl">Recent Reads</h2>
           <div className="flex flex-wrap justify-center items-center">
-            {goodReadsFeed.items ? (
-                goodReadsFeed.items.map((book, key) => {
+            {goodReadsFeed ? (
+                goodReadsFeed.map((book, key) => {
                     const formattedTimestamp = reformatTimestamp(book.pubDate);
                     const bookImg = getBookImg(book);
                     const bookTitle = getBookTitle(book.title);

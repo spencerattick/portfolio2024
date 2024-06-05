@@ -15,24 +15,24 @@ const getGithubCommitData = async () => {
 }
 
 
-
 export async function getServerSideProps() {
   const [goodReadsData, githubCommitData /*stravaData */] = await Promise.all([
     getGoodreadsData(), 
     getGithubCommitData()
     // executeStravaLogic()
   ]);
-  return { props: { goodReadsData, githubCommitData } };
+  const halfGoodReadsData = goodReadsData.items.slice(0, goodReadsData.items.length / 2);
+  return { props: { halfGoodReadsData, githubCommitData } };
 }
 
 
-const About = ({ goodReadsData, stravaData, githubCommitData }) => {
+const About = ({ halfGoodReadsData, stravaData, githubCommitData }) => {
     return (
       <RootLayout>
         <div>
           <AboutMe githubCommitData={githubCommitData}/>
           <div className="flex">
-            <Goodreads className="mt-7" initialData={goodReadsData}/>
+            <Goodreads className="mt-7" initialData={halfGoodReadsData}/>
             {/* <Strava initialData={stravaData}/> */}
           </div>
         </div>
