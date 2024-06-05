@@ -1,24 +1,18 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
 import NewNav from "../components/NewNav";
 import Footer from "../components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata = {
-//   title: "Spencer Attick Portfolio"
-// };
-
 export default function RootLayout({ children }) {
   return (
-    <>
-      {/* <Navbar /> */}
+    <div>
       <NewNav />
-      <div className={inter.className}>
+      <main className="flex-grow">
         {children}
-      </div>
-      <Footer />
-    </>
+      </main>
+      <Footer className=""/>
+    </div>
   );
 }
