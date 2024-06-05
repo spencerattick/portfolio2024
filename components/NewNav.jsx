@@ -27,7 +27,7 @@ const NewNav = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-10 h-10 text-red-500 cursor-pointer mr-4" onClick={handleNavToggle}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
-                    <div className="flex space-x-7 text-red-500 text-lg font-semibold bg-black bg-opacity-30 p-4 rounded-lg">
+                    <div className="flex space-x-7 text-red-500 text-lg font-semibold bg-black p-4 rounded-lg">
                         <Link href='/' className="hover:bg-gray-600" onClick={handleLinkClick}>Home</Link>
                         <Link href='/about' className="hover:bg-gray-600" onClick={handleLinkClick}>About</Link>
                         <Link href='/projects' className="hover:bg-gray-600" onClick={handleLinkClick}>Projects</Link>
