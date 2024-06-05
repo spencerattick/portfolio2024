@@ -62,7 +62,7 @@ const Projects = ({ initialData }) => {
                         const cleanTitle = removeProjectFromTitle(project.title);
                         const imgUrl = getImgURL(project['content:encoded']);
                         return (
-                            <li key={index} className="text-teal-600 text-xl m-10 mx-12 shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-80 w-80 border-0 border-b-red-500 border-b-8 hover:bg-black hover:w-96">
+                            <li key={index} className="text-teal-600 text-xl m-10 mx-12 shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-80 w-80 border-0 border-b-red-500 border-b-8 hover:bg-black hover:w-96 rounded-lg">
                                 <a href={project.guid} target="_blank" className="cursor-pointer">
                                     <div className="text-center flex flex-col justify-center items-center">
                                         <p className="my-4 font-semibold">{cleanTitle}</p>

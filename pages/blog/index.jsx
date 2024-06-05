@@ -55,7 +55,7 @@ const Blog = ({ initialData }) => {
 
     return (
         <RootLayout>
-            <div className="flex flex-col justify-center items-center h-full bg-teal-600 py-10">
+            <div className="flex flex-col justify-center items-center h-ful py-10">
                 <h1 className="text-black font-bold text-4xl my-10 mt-12">BLOG POSTS</h1>
                 <ul className="flex flex-wrap justify-around">
                     {projects.map((project, index) => {

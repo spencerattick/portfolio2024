@@ -43,7 +43,7 @@ const Goodreads = ({ initialData }) => {
     }, [initialData]);
 
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center mb-10">
           <h2 className="font-bold text-3xl">Recent Reads</h2>
           <div className="flex flex-wrap justify-center items-center">
             {goodReadsFeed ? (
