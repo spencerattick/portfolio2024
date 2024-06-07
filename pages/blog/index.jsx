@@ -62,7 +62,7 @@ const Blog = ({ initialData }) => {
                         const cleanTitle = removeProjectFromTitle(project.title);
                         const imgUrl = getImgURL(project['content:encoded']);
                         return (
-                            <li key={index} className="text-black bg-white text-xl m-10 mx-12 rounded-lg shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-80 w-80 border-0 hover:bg-black hover:w-96">
+                            <li key={index} className="text-black bg-white text-xl m-10 mx-12 rounded-lg shadow-lg shadow-gray-500 hover:text-white ease-in-out duration-200 h-70 w-60 md:h-80 md:w-80 border-0 hover:bg-black hover:w-96 ml-5 sm:ml-0">
                                 <a href={project.guid} target="_blank" className="cursor-pointer">
                                     <div className="text-center flex flex-col justify-center items-center">
                                         <div className="relative w-full h-40">
@@ -70,8 +70,8 @@ const Blog = ({ initialData }) => {
                                                 <Image src={imgUrl} layout="fill" objectFit="cover" alt={cleanTitle} className="rounded-t-lg" />
                                             </div>
                                         </div>
-                                        <p className="my-4 font-semibold">{cleanTitle}</p>
-                                        <p className="text-sm text-black mb-4">{new Date(project.isoDate).toDateString().split(' ').slice(1).join(' ')}</p>
+                                        <p className="my-4 text-sm sm:text-md md:text-lg lg:text-xl font-semibold">{cleanTitle}</p>
+                                        <p className="text-xs sm:text-sm md:text-md text-black mb-4">{new Date(project.isoDate).toDateString().split(' ').slice(1).join(' ')}</p>
                                     </div>   
                                 </a>
                                 
