@@ -29,7 +29,7 @@ export default function TechStack() {
                 </div>
                 <span className="text-white">{tech.name}</span>
               </div>
-              <div className="relative flex items-center w-full h-8">
+              <div className="relative flex items-center w-full md:h-8 sm:h-6 h-4">
                 <div 
                   className="absolute bg-teal-600 left-0 h-full tech-bar transition-all duration-1000 ease-out rounded-xl" 
                   data-width={tech.level} 
