@@ -30,7 +30,7 @@ const About = ({ halfGoodReadsData, stravaData, githubCommitData }) => {
     return (
       <RootLayout>
         <div>
-          <AboutMe githubCommitData={githubCommitData}/>
+          <AboutMe githubCommitData={githubCommitData || undefined}/>
           <div className="flex justify-center">
             <Goodreads className="mt-7" initialData={halfGoodReadsData}/>
             {/* <Strava initialData={stravaData}/> */}
