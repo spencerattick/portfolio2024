@@ -3,7 +3,9 @@ import aboutMe from "../public/aboutMe.png";
 
 const AboutMe = ({ githubCommitData }) => {
     return (
-        <div className="flex justify-center items-center h-full m-20">
+      <div>
+        {githubCommitData ? (
+          <div className="flex justify-center items-center h-full m-20">
           <div className="flex-col justify-center items-center h-full p-3 md:p-5 lg:p-20">
             <h1 className="font-bold text-2xl lg:text-4xl">Hi, I'm Spencer! I'm a full stack software engineer obsessed with constantly learning new things.</h1>
             <p className="text-lg lg:text-xl">
@@ -23,6 +25,13 @@ const AboutMe = ({ githubCommitData }) => {
             <Image src={aboutMe} width={800} height={800} alt="Spencer hiking in the mountains" className="rounded-3xl rotate-6 hidden md:block" />
           </div>
         </div>
+        ) : (
+          <div>
+            NOTHING TO SEE HERE
+          </div>
+        )}
+      </div>
+        
    
     )
 }
