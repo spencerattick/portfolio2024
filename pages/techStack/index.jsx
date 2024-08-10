@@ -16,7 +16,7 @@ export default function TechStack() {
 
   return (
     <RootLayout>
-      <div className="flex flex-col items-start min-h-screen bg-black pb-20">
+      <div className="flex flex-col items-start min-h-screen bg-black pb-20 pr-10">
         <h1 className="text-white font-bold text-4xl my-10 mt-12 self-center">Tech Stack</h1>
         <div className="flex flex-col items-start justify-start ml-10 w-full">
           {techStack.map((tech, index) => (
